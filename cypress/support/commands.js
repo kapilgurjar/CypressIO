@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//const cypress = require("cypress");
+
+Cypress.Commands.add('verifyProductPrice',()=>{
+    let price
+     cy.get('li>h2')
+        .invoke("text")
+        .then(cy.log)
+        .then((text) => {
+            text=price
+        })  
+        
+        .then(() => {
+            cy.wrap(price)
+            return price;
+          })
+})
+
+

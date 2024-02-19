@@ -63,6 +63,13 @@ class loginpage extends BasePage{
     verifyAccountCreationMessage(){
         this.FailedMsg.should('have.text','Your Account Has Been Created!');
     }
-   
+     getPrice() {
+       return cy.get('li>h2');
+            //const price = $ele.text();
+           // cy.log(price);
+           // assert.equal(price, '$123.20');
+            // You can perform additional actions with the price value here
+    }
+    
 }
 module.exports = new loginpage();

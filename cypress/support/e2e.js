@@ -19,7 +19,7 @@ import 'cypress-mochawesome-reporter/register';
 import '@shelex/cypress-allure-plugin';
 
 // Alternatively you can use CommonJS syntax:
-// require('./commands')
+ //require('./commands')
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from

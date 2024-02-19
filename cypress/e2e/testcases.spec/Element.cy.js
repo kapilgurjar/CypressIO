@@ -1,3 +1,4 @@
+const loginpage = require('../../pageObjects/loginpage');
 describe('Dom command ',()=>{
 
     it('---TC01---',()=>{
@@ -19,10 +20,23 @@ describe('Dom command ',()=>{
            } 
         });
 
-        cy.get('li>h2').then($ele=>{
-           const price=$ele.text();
-            cy.log(price)
+       //cy.verifyProductPrice();
+        loginpage.getPrice().then($ele=>{
+           const price = $ele.text();
+           cy.log("procudt price is "+price)
+           assert.equal(price,'$123.20');
         })
+
+      // cy.log('price is equal to '+ price)
+
+    
+
+    //     cy.get('li>h2').then($ele=>{
+    //        const price=$ele.text();
+    //         cy.log(price)
+    //         //cy.wrap($ele).should("have.text",'$123.20')
+    //         assert.equal(price,'$123.20');
+    //     })
     })
 
 })
